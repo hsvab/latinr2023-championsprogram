@@ -389,7 +389,7 @@
 <ul>
 <li><p>Similar packages? <a href="https://cran.r-project.org/web/packages/od/vignettes/od.html">od</a></p></li>
 <li><p>It is not a data package</p></li>
-<li><p>Functions for analysing OD surveys</p></li>
+<li><p>Functions for analyzing OD surveys</p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -463,57 +463,67 @@
 </ul>
 </section>
 <section class="slide level2">
-<h2>Main functions</h2>
+<h2>Main functions on <strong>odbr</strong></h2>
 <p><br></p>
 <ul>
-<li><p>download_piggyback()</p></li>
-<li><p>read_od()</p></li>
+<li><p><a href="https://github.com/hsvab/odbr/blob/main/R/download.R">download_piggyback()</a></p></li>
+<li><p><a href="https://github.com/hsvab/odbr/blob/main/R/read_od.R">read_od()</a></p></li>
 <li><p>read_dictionary()</p></li>
 </ul>
 </section>
 <section class="slide level2">
-<h2>Main functions</h2>
+<h2>Main functions on <strong>odbr</strong></h2>
 <p><br></p>
 <h3>download_piggyback()</h3>
 <ul>
-<li><p><strong>required parameter</strong>: the filename_to_download</p></li>
+<li><p><strong>required parameters</strong>: the filename_to_download</p></li>
 <li><p><strong>description</strong>: download data from an existing release, used by read_od() and read_dictionary() functions</p></li>
 <li><p><strong>return</strong>: temporary_filename with the downloaded data</p></li>
 <li><p><strong>status</strong>: done!</p></li>
 </ul>
 </section>
 <section class="slide level2">
-<h2>Main functions</h2>
+<h2>Main functions on <strong>odbr</strong></h2>
 <p><br></p>
 <h3>read_od()</h3>
 <ul>
-<li><p><strong>required parameter</strong>: city, year and whether you want the harmonised database (over the years, for the same city) or not - the default is the raw base</p></li>
+<li><p><strong>required parameters</strong>: city, year and whether you want the harmonised database (over the years, for the same city) or not - the default is the raw base</p></li>
 <li><p><strong>description</strong>: after some argument checking it calls download_piggyback()</p></li>
 <li><p><strong>return</strong>: od_file with the requested data (if exists)</p></li>
 <li><p><strong>status</strong>: structure is done, need to improve the composition of the path with filename</p></li>
 </ul>
 </section>
 <section class="slide level2">
-<h2>Main functions</h2>
+<h2>Main functions on <strong>odbr</strong></h2>
 <p><br></p>
 <h3>read_dictionary()</h3>
 <ul>
-<li><p><strong>required parameter</strong>: city, year and whether you want the harmonized database (over the years, for the same city) or not - the default is the raw base</p></li>
+<li><p><strong>required parameters</strong>: city, year and whether you want the harmonized database (over the years, for the same city) or not - the default is the raw base</p></li>
 <li><p><strong>description</strong>: after some argument checking it calls download_piggyback()</p></li>
 <li><p><strong>return</strong>: to be defined</p></li>
 <li><p><strong>status</strong>: to do</p></li>
 </ul>
 </section>
 <section class="slide level2">
-<h2>Next steps raodmap</h2>
+<h2>Next steps roadmap</h2>
 <ul>
 <li><p><strong>June/2023</strong>: Make available 1977 dataset (raw) within a data dictionary (v.0.0.2) + rOpenSci Meeting</p></li>
 <li><p><strong>July/2023</strong>: Make available 1987, 1977, 2007 and 2017 dataset (raw) within a data dictionary for each (v.0.0.3)</p></li>
 <li><p><strong>August/2023</strong>: Make available 1977, 1987, 1977, 2007 and 2017 dataset (harmonized)(v.0.0.4)</p></li>
 <li><p><strong>September/2023</strong>: Make available 1977, 1987, 1977, 2007 and 2017 dictionaries (harmonized)(v.1.0.0 - pre relase) + rOpenSci Meeting</p></li>
 <li><p><strong>October/2023</strong>: Final reviews after feedbacks (v.1.0.0 - production)</p></li>
-<li><p><strong>November/2023</strong>: Docuemtnation + create a website for the package with pkgdown</p></li>
+<li><p><strong>November/2023</strong>: Documentation + create a website for the package with pkgdown</p></li>
 </ul>
+</section>
+<section class="slide level2">
+<h2>Thanks to</h2>
+<p><br></p>
+<p>Mentor Beatriz Milz</p>
+<p><a href="https://twitter.com/BeaMilz">@BeaMilz</a></p>
+<p>4 hands-on meetings until now!</p>
+<p><br></p>
+<p>RLadies São Paulo community</p>
+<p><a href="https://www.meetup.com/rladies-sao-paulo/">Meetup</a></p>
 
 <img src="images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Slides by <a href="https://www.linkedin.com/in/hsvab/">Haydée Svab</a> (<span class="citation" data-cites="hsvab">@hsvab</span>), made with <a href="https://quarto.org/docs/presentations/revealjs/index.html">Quarto</a>. Code available <a href="https://github.com/hsvab/2023-ropensci-champions-program">on GitHub</a>.</p>

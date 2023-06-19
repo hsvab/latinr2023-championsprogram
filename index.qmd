@@ -95,7 +95,7 @@ A Package that makes available data from Brazil's orgin-destination (OD) surveys
 
 - It is not a data package
 
-- Functions for analysing OD surveys
+- Functions for analyzing OD surveys
 
 ## First Steps
 
@@ -172,7 +172,7 @@ I will make the databases available in their original format and with some harmo
 - gave another, simpler package to also have as reference: [aopdata](https://cran.r-project.org/web/packages/aopdata/index.html)
 
 
-## Main functions on `odbr`
+## Main functions on **odbr**
 
 <br>
 
@@ -183,7 +183,7 @@ I will make the databases available in their original format and with some harmo
 - read_dictionary()
 
 
-## Main functions on `odbr`
+## Main functions on **odbr**
 
 <br>
 
@@ -198,7 +198,7 @@ I will make the databases available in their original format and with some harmo
 - **status**: done!
 
 
-## Main functions
+## Main functions on **odbr**
 
 <br>
 
@@ -213,7 +213,7 @@ I will make the databases available in their original format and with some harmo
 - **status**: structure is done, need to improve the composition of the path with filename
 
 
-## Main functions
+## Main functions on **odbr**
 
 <br>
 
@@ -237,3 +237,20 @@ I will make the databases available in their original format and with some harmo
 - **September/2023**: Make available 1977, 1987, 1977, 2007 and 2017 dictionaries (harmonized)(v.1.0.0 - pre relase) + rOpenSci Meeting
 - **October/2023**: Final reviews after feedbacks (v.1.0.0 - production)
 - **November/2023**: Documentation + create a website for the package with pkgdown
+
+## Thanks to
+
+<br>
+
+Mentor Beatriz Milz
+
+[\@BeaMilz](https://twitter.com/BeaMilz)
+
+4 hands-on meetings until now!
+
+<br>
+
+RLadies São Paulo community
+
+[Meetup](https://www.meetup.com/rladies-sao-paulo/)
+
