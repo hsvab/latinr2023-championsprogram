@@ -1,10 +1,10 @@
 ---
-title: "**odbr** package development"
-author: "Haydée Svab"
-date: "rOpenSci Champions Program | 2023 June"
+title: "Programa de Campeãs e Campeões na América Latina <br> **rOpenSci**"
+author: "Yanina Noemí Bellini Saibene, Elio Campitelli, Marcos Prunello, Mauro Lepore, Haydee Svab, Beatriz Milz, Carolina Pradier, Cesar Luis Aybar Camacho, Paola Corrales"
+date: "rOpenSci Champions Program | 2023-10-18"
 format: 
   revealjs:
-    logo: "images/logo.png"
+    logo: "images/LatinR_LOGOS-21.png"
     width: 1600
     height: 900
     self-contained: false
@@ -17,240 +17,523 @@ format:
     preview-links: false
 ---
 
-## Haydée Svab 🇧🇷 {.center .aboutmeslide}
+# rOpenSci
+
+## rOpenSci
 
 ::: columns
-::: {.column width="60%"}
--   Contact
-
-    -   Linkedin: [Haydee Svab](https://www.linkedin.com/in/hsvab/)
-  
-    -   Twitter: [\@hsvab](https://twitter.com/hsvab)
-
--   About me
-
-    -   Civil Engineer | MSc Transportation Eng. and Planning
-    
-    -   Data Scientist | Consultant | Researcher
-
-    -   Urban Mobility  | Smart Cities | Digital Government
-    
-    -   R-Ladies São Paulo chapter co-founder and co-organizer
-:::
-
 ::: {.column width="40%"}
-![](images/foto-linkedin.jpeg)
+
+Promoção de cultura que valorize a pesquisa **aberta** e **reprodutível** usando dados **compartilhados** e software **open-source**.
+
+:::
+
+::: {.column width="60%"}
+![](images/ropensci-diagrama1.png){width=80%}
 :::
 :::
 
-# odbr package
 
-## Objective
+## rOpenSci
+
+![](images/ropensci-timeline.png){.r-stretch}
+
+
+# Programa Campeãs/Campeões
+
+
+## Marco conceitual
+
+As pessoas campeãs de uma comunidade são aquelas que assumem maior
+responsabilidade pelo sucesso, pela sustentabilidade e/ou por seu
+funcionamento.[1]
 
 <br> 
 
-A Package that makes available data from Brazil's orgin-destination (OD) surveys
+![](images/CSCCE_CPM_Final.jpg)
+
+## Objetivo geral
+
+::: columns
+::: {.column width="40%"}
+
+- Identificar, reconhecer e recompensar líderes em uma comunidade.
+- Destina-se a pessoas de grupos histórica e sistematicamente excluídos que estejam interessadas em contribuir com a rOpenSci e com as comunidades mais amplas de código aberto e ciência aberta.
+
+:::
+
+::: {.column width="60%"}
+
+![illustration for rOpenSci by Lydia Hill](images/ropensci-champions1.png){fig-align="center"}
+
+:::
+:::
+
+## Elegiblidade
+
+- pessoas que trabalham com STEAM (ciência, tecnologia, engenharia e matemática)
+- de qualquer lugar em qualquer lugar do mundo
+- que tenham conhecimento de desenvolvimento com a linguagem R
+- possuam habilidades básicas de comunicação em inglês (escrita e verbal)
+
+E que desejem:
+
+- desenvolver um novo pacote, ou
+- ter um pacote em R, já desenvolvio, revisado por pares, ou
+- se tornar revisoras da rOpenSci
+
+## Objetivos específicos para campeãs e campeões
+
+- Adquirir habilidades para desenvolver seu próprio pacote R ou;
+- Adquirir confiança para enviar um pacote R para revisão por pares; ou
+- Tornar-se um revisor
+
+- Aprender a liderar um workshop, evento ou outra atividade da rOpenSci sobre o
+tópico de desenvolvimento de pacotes ou revisão por pares de software em sua
+comunidade local
+- Conectar-se a uma rede de apoio de colegas e mentores dentro do ecossistema R
+- Fornecer feedback para ajudar a rOpenSci a continuar organizando atividades
+relevantes e acolhedoras para desenvolvedores de R
+
+
+## Como funciona
+
+::: columns
+::: {.column width="50%"}
+
+- Interessados/as/es devem preencher um formulário, geralmente disponibilizado
+entre julho e outubro
+
+- As inscrições são individuais
+
+- Não há custo para participar
+
+:::
+
+::: {.column width="50%"}
+- Duração: 12 meses
+
+- Dedicação estimada: de 10 a 16 horas mensais
+
+- Bolsa: US$ 1.000 para quem concluir o programa
+
+:::
+:::
+
+![](images/ropensci-funcionamento.png){.r-stretch}
+
+## Atividades desenvolvidas
+
+Treinamentos (6 primeiras semanas) com posterior 
+desenvolvimento de projeto e mentoria, além de encontros trimestrais
+
+![](images/ropensci-atividades.png){fig-align="center"}
+
+
+## 1a edição - 2022/2023
+
+Candidaturas: 74 campeãs/ões, 28 mentoras/es, 31 países
+
+![](images/countriesApplications_es.png){fig-align="center"}
+
+## 2a edição - 2023/2024
+
+Candidaturas: 171 campeãs/ões, 56 mentoras/es, 55 países
+
+![](images/countriesApplications_en.png){fig-align="center"}
+
+## Destaque
+
+<br>
+
+**América Latina: 3 mentoras/es | 5 campeãs/ões | 3 instrutoras/es/**
+
+::: columns
+::: {.column width="50%"}
+
+```{r}
+library(ggplot2)
+library(readr)
+champions <- read_csv("champions.csv")
+
+plot <- ggplot(champions) +
+  aes(x = edição, y = `2022/2023`, label = `Percent_2022`) +
+  geom_col(fill = "#4682B4") +
+  coord_flip() +
+  theme_minimal() +
+  ylim(0, 110) +
+  geom_text(hjust = -0.5)
+
+plot
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+library(ggplot2)
+library(readr)
+champions <- read_csv("champions.csv")
+
+plot <- ggplot(champions) +
+  aes(x = edição, y = `2023/2024`, label = `Percent_2023`) +
+  geom_col(fill = "#4682B4") +
+  coord_flip() +
+  theme_minimal() +
+  ylim(0, 110) +
+  geom_text(hjust = -0.5)
+
+plot
+```
+:::
+:::
+
+
+
+## Mentoras/es latinoamericanas/os
+
+::: columns
+::: {.column width="33%"}
+
+Beatriz Milz
+![](images/beatriz-milz-mentor.jpeg "Title: Beatriz Milz, photo"){height=300px fig-align="center"  fig-alt="Beatriz Milz, photo"}
+:::
+
+::: {.column width="33%"}
+
+Elio Campitelli
+![](images/elio-campitelli.jpg "Title: Elio Campitelli photo"){height=300px fig-align="center"  fig-alt="Elio Campitelli photo"}
+
+:::
+
+::: {.column width="34%"}
+
+Mauro Lepore
+![](images/mauro-lepore-mentor.jpg "Title: Mauro Lepore photo"){height=300px fig-align="center"  fig-alt="Mauro Lepore photo"}
+
+:::
+:::
+
+![](images/ciclo-orientacao.png "Title: Ciclo da mentoria"){height=370px fig-align="center"  fig-alt="Ciclo da mentoria"}
+
+
+## Lições aprendidas
+
+- Ferramentas e espaço para que campeãs/ões e mentoras/es desenvolvam seus projetos de desenvolvimento ou revisão de pacotes com:
+   - ganho de experiência
+   - aprimoramento de competências
+   - orientação de mentores
+   - apoio de uma comunidade
+   - aspecto formal com cronograma definido ajuda a manter o o foco na tarefa e a concluí-la em um tempo razoável
+
+      
+## Lições aprendidas
+
+- Retorno tangível à comunidade latino-americana de pesquisa e desenvolvimento por diferentes meios, como:
+   - é necessários que campeãs/ões compartilhem o que aprenderam com a comunidade (blogposts, workshops, etc.)
+   - aumento do material atualizado em espanhol e português sobre desenvolvimento/revisão de pacotes
+   - aumento da procura de pessoas pelo programa, em todas suas finalidades
+   
+![](images/check.png "Lições aprendidas logo"){width=150px fig-align="center"  fig-alt="Lições aprendidas logo"}
+   
+
+# Pacotes desenvolvidos / revisados
+
+## eph
+
+::: columns
+::: {.column width="50%"}
+![](images/eph.png "Title: eph package logo"){width=250px fig-align="center"  fig-alt="eph package logo"}
+
+por Carolina Pradier
+
+![](images/carolina-pradier-mentee.jpg "Title: Carolina Pradier photo"){height=300px fig-align="center"  fig-alt="Carolina Pradier photo"}
+:::
+
+::: {.column width="50%"}
+O pacote eph consiste em um conjunto de ferramentas para baixar e manipular dados da Pesquisa Domiciliar Permanente da Argentina.
+
+Carolina adicionou funcionalidade ao pacote, reduziu o número de dependências, melhorou as mensagens de erro e aumentou a cobertura de testes antes de enviar o pacote para revisão.
+
+Disponível no [GitHub](https://github.com/ropensci/eph) e no [Cran](https://cran.r-project.org/web/packages/eph/index.html).
+:::
+:::
+
+## karel
+
+::: columns
+::: {.column width="50%"}
+![](images/karel.png "Title: karel package logo"){width=250px fig-align="center"  fig-alt="karel package logo"}
+
+por Marcos Miguel Prunello
+
+![](images/marcos-prunello-mentee.jpg "Title: Marcos Miguel Prunello photo"){height=300px fig-align="center"  fig-alt="Marcos Miguel Prunello photo"}
+:::
+
+::: {.column width="50%"}
+Marcos Prunello trabalhou em seu pacote karel, uma ferramenta útil para ensinar conceitos introdutórios de programação de forma interativa e divertida, escrevendo programas para Karel realizar tarefas. O pacote também fornece funções, argumentos e mensagens do rOpenSci Champions Program in Latin America em inglês e espanhol, de forma a ser possível adicionar mais idiomas.
+
+Disponível no [GitHub](https://mpru.github.io/karel/) e no [Cran](https://cran.r-project.org/web/packages/karel/index.html)
+:::
+:::
+
+
+## agromet
+
+::: columns
+::: {.column width="50%"}
+
+![](images/agromet.png "Title: agromet package logo"){width=250px fig-align="center"  fig-alt="agromet package logo"}
+
+
+por Paola Corrales
+
+![](images/paola-corrales.png "Title: Paola Corrales photo"){height=300px fig-align="center"  fig-alt="Paola Corrales photo"}
+:::
+
+::: {.column width="50%"}
+Paola Corrales desenvolveu o pacote agromet que calcula índices climáticos,
+hidrológicos e estatísticas a partir de dados classificados, incluindo uma 
+uma função para gerar gráficos de resultados georreferenciados e informações de mapeamento. Paola substituiu dependências, melhorou as mensagens de erro e 
+aumentou a cobertura dos testes.
+
+Disponível no [GitHub](https://github.com/AgRoMeteorologiaINTA/agromet)
+:::
+:::
+
+
+## rgeeExtra
+
+::: columns
+::: {.column width="50%"}
+
+![](images/rgeeextra.png "Title: rgeeextra package logo"){width=250px fig-align="center"  fig-alt="rgeeextra package logo"}
+
+
+por Cesar Luis Aybar Camacho
+
+![](images/cesar-luis-aybar-camacho-mentee.jpeg "Title: Cesar Luis Aybar Camacho photo"){height=300px fig-align="center"  fig-alt="Cesar Luis Aybar Camacho photo"}
+:::
+
+::: {.column width="50%"}
+Cesar Aybar desenvolveu o pacote rgeeExtra que amplia a funcionalidade do {rgee} para poder acessar e processar informações espaciais de sensores remotos com uma sintaxe amigável para os usuários do R. Cesar trabalhou para adicionar funcionalidades e substituir dependências espaciais que serão removidas.
+
+Disponível no [GitHub](https://github.com/r-earthengine/rgeeExtra)
+:::
+:::
+
+## odbr
+
+::: columns
+::: {.column width="50%"}
+
+![](images/odbr.png "Title: odbr package logo"){width=270px fig-align="center"  fig-alt="odbr package logo"}
+
+por Haydee Svab
+
+![](images/foto-linkedin.jpeg "Title: Haydee Svab photo"){height=300px fig-align="center"  fig-alt="Haydee Svab photo"}
+:::
+
+::: {.column width="50%"}
+Haydee Svab desenvolveu um novo pacote chamado **odbr** que permite acessar e 
+processar dados das pesquisas origem e destino (od) brasileiras, o que viabiliza
+posterior uso de outros pacotes em R e implementação de vários algoritmos que
+desenvolveu para sua dissertação de mestrado.
+
+Disponível no [GitHub](https://github.com/hsvab/odbr) e em análise no CRAN
+:::
+:::
+
+# pacote odbr
+
+## Objetivo | Motivação
 
 <br> 
 
-[GitHub repository](https://github.com/hsvab/odbr)
+### Objetivo
+
+Disponibilizar dados de pesquisas origem destino brasileira num único lugar,
+tornando estes dados abertos mais acessíveis e potencializando seu uso.
+
+<br> 
+
+### Motivação
+
+- Minha dissertação de mestrado [2]
+- Dados iniciais: 6 coortes de São Paulo (1977, 1987, 1997, 2007 e 2017) e com outra sendo produzida em 2022
+- Maximizar o uso dos dados em si e do impacto da minha pesquisa [3]
 
 
-
-## Motivation
-
-<br>
-
-- My master's thesis: [Mobility pattern trends in the metropolitan area of São Paulo: the need of a gender perspective](https://www.teses.usp.br/teses/disponiveis/3/3138/tde-30092016-142308/pt-br.php)
-
-- 1977, 1987, 1997 and 2007 cohorts from São Paulo
-
-
-- Wish to maximize the impact of my research and its results
-
-
-- GitHub repositories: [databases](https://github.com/hsvab/mestrado-usp-ODs) and [algorithms](https://github.com/hsvab/mestrado-usp-algoritmos)
-
-
-
-## First Steps
+## Primeiros passos
 
 <br>
 
-- Similar packages?
+::: columns
+::: {.column width="50%"}
+
+- Há pacotes similares?
+   - [od](https://cran.r-project.org/web/packages/od/vignettes/od.html)
+   - Não é um pacote de dados
+   - Disponibiliza funções para analisar dados de pesquisas OD
+
+:::
+
+::: {.column width="50%"}
+
+- Pacotes para inspirar:
+[geobr](https://cran.r-project.org/web/packages/geobr/index.html), [aopdata](https://cran.r-project.org/web/packages/aopdata/index.html),
+[censobr](https://cran.r-project.org/web/packages/censobr/index.html)
+   - Pacotes de dados
+   - Do Brasil
+   - Co-mentoria de Rafael Pereira (IPEA): conversas no 1o e no 2o semestre de 2023
+
+:::
+:::
+
+![](images/footsteps_icon.png "Title: footsteps icon"){height=170px fig-align="center"  fig-alt="footsteps icon"}
 
 
-## First Steps
-
-<br>
-
-- Similar packages? [od](https://cran.r-project.org/web/packages/od/vignettes/od.html)
-
-
-## First Steps
-
-<br>
-
-- Similar packages? [od](https://cran.r-project.org/web/packages/od/vignettes/od.html)
-
-- It is not a data package
-
-- Functions for analyzing OD surveys
-
-## First Steps
-
-<br>
-
-- Inspirational packages?
-
-## First Steps
-
-<br>
-
-- Inspirational packages? [geobr](https://github.com/ipeaGIT/geobr/)
-
-## First Steps
+## Questões estratégicas
 
 <br>
 
-- Inspirational packages? [geobr](https://github.com/ipeaGIT/geobr/)
+- Serão dados de São Paulo ou de todo Brasil?
 
-- It is a data package
+- Serão apenas bases no formato original ou haverá algum tipo de hamonização?
 
-- It is from Brazil
+- Havendo harmonização, como serão?
 
-## First Steps
+- Em que língua estãos os dados? Em que língua será feito o pacote?
 
-<br>
+![](images/estrategia.png "Title: strategy icon"){width=270px fig-align="center"  fig-alt="strategy icon"}
 
-- Inspirational packages? [geobr](https://github.com/ipeaGIT/geobr/)
-
-- It is a data package
-
-- It is from Brazil
-
-- Talk to Rafael Pereira (May 11th)
-
-## First Steps
+## Principais funções do pacote **odbr**
 
 <br>
-
-- Inspirational packages? [geobr](https://github.com/ipeaGIT/geobr/)
-
-- It is a data package
-
-- It is from Brazil
-
-- Talk to Rafael Pereira (May 11th): what is his opinion about creating new monetary variables (such as family income) with all nominal values brought to the same date
-
-## Strategic questions
-
-<br>
-
-- Will it be data only for São Paulo or for all of Brazil?
-
-- Will it be only the databases in their original format? Or will there be some harmonization (between locations and/or years)?
-
-## Strategic questions
-
-<br>
-
-- Will it be data only for São Paulo or for all of Brazil?
-
-The package will seek OD survey data from all Brazilian cities with this type of data, but this year, within the rOpenSci program, I will focus only on data from São Paulo.
-
-
-- Will it be only the databases in their original format? Or will there be some harmonization (between locations and/or years)?
-
-I will make the databases available in their original format and with some harmonization between the years, for the same place.
-
-
-## Other valuable tips from the talk
-
-- failures and challenges that the geobr package faced, such as how to make large databases available: [piggyback](https://cran.r-project.org/web/packages/piggyback/index.html)
-
-- gave another, simpler package to also have as reference: [aopdata](https://cran.r-project.org/web/packages/aopdata/index.html)
-
-
-## Main functions on **odbr**
-
-<br>
-
-- [download_piggyback()](https://github.com/hsvab/odbr/blob/main/R/download.R)
 
 - [read_od()](https://github.com/hsvab/odbr/blob/main/R/read_od.R)
+     - parâmetros: city, year e hamonize (TRUE, FALSE)
 
-- read_dictionary()
+- [read_dictionary()](https://github.com/hsvab/odbr/blob/main/R/read_dictionary.R)
+     - parâmetros: city, year, hamonize e language (pt, en, es)
 
+- [read_map()](https://github.com/hsvab/odbr/blob/main/R/read_map.R)
+     - parâmetros: city, year, hamonize e geometry (zone, district, municipality)
 
-## Main functions on **odbr**
-
-<br>
-
-### download_piggyback()
-
-- **required parameters**: the filename_to_download
-
-- **description**: download data from an existing release, used by read_od() and read_dictionary() functions
-
-- **return**: temporary_filename with the downloaded data
-
-- **status**: done!
-
-
-## Main functions on **odbr**
+## Funções úteis no pacote **odbr**
 
 <br>
 
-### read_od()
+- [clean_string()](https://github.com/hsvab/odbr/blob/main/R/utils.R)
+     - remove caracteres não ASCII
 
-- **required parameters**: city, year and whether you want the harmonised database (over the years, for the same city) or not - the default is the raw base
+- [compose_file_path()](https://github.com/hsvab/odbr/blob/main/R/utils.R)
+     - parâmetros: city, year e hamonize (TRUE, FALSE)
+     
+- [compose_name()](https://github.com/hsvab/odbr/blob/main/R/utils.R)
+     - parâmetros: city, year, hamonize e level (od, dictionary, etc.)
 
-- **description**: after some argument checking it calls download_piggyback()
-
-- **return**: od_file with the requested data (if exists)
-
-- **status**: structure is done, need to improve the composition of the path with filename
-
-
-## Main functions on **odbr**
-
-<br>
-
-### read_dictionary()
-
-- **required parameters**: city, year and whether you want the harmonized database (over the years, for the same city) or not - the default is the raw base
-
-- **description**: after some argument checking it calls download_piggyback()
-
-- **return**: to be defined
-
-- **status**: to do
+- [download_piggyback()](https://github.com/hsvab/odbr/blob/main/R/download.R)
+     - parâmetros: nome do arquivo a ser baixado     
 
 
-## Next steps roadmap
+## Dificuldades | desafios técnicos | submissão no CRAN
 
-- **June/2023**: Make available 1977 dataset (raw) within a data dictionary (v.0.0.2) + rOpenSci Meeting
+**Como lidar com grandes bases de dados**
 
-- **July/2023**: Make available 1987, 1977, 2007 and 2017 dataset (raw) within a data dictionary for each (v.0.0.3)
-- **August/2023**: Make available 1977, 1987, 1977, 2007 and 2017 dataset (harmonized)(v.0.0.4)
-- **September/2023**: Make available 1977, 1987, 1977, 2007 and 2017 dictionaries (harmonized)(v.1.0.0 - pre relase) + rOpenSci Meeting
-- **October/2023**: Final reviews after feedbacks (v.1.0.0 - production)
-- **November/2023**: Documentation + create a website for the package with pkgdown
+- apendizado com experiência do [geobr](https://cran.r-project.org/web/packages/geobr/index.html)
+- **solução:** utilização do [piggyback](https://cran.r-project.org/web/packages/piggyback/index.html) e disponibilização como _assets_
 
-## Thanks to
+![](images/assets.png "Title: odbr repo print screen of assets"){height=450px fig-align="center"  fig-alt="odbr repo print screen of assets"}
 
-<br>
+## Dificuldades | desafios técnicos | submissão no CRAN
 
-Mentor Beatriz Milz
+**Como limitar / controlar o tempo de execução no CRAN**
 
-[\@BeaMilz](https://twitter.com/BeaMilz)
+::: columns
+::: {.column width="50%"}
 
-4 hands-on meetings until now!
+- da Política do CRAN: _"Checking the package should take as little CPU time as possible"_ (...) _"Examples should run for no more than a few seconds each"_
+- do stackoverflow / issues no Github: tempo de execução não superior a 5s por exemplo
+- apendizado com experiência do [censobr](https://github.com/ipeaGIT/censobr)
 
-<br>
+:::
 
-RLadies São Paulo community
+::: {.column width="50%"}
 
-[Meetup](https://www.meetup.com/rladies-sao-paulo/)
+- pacotes com download de dados muito dependente de qualidade da conexão
+- **solução:** não executar os exemplos
+
+![](images/exemplos.png "Title: exemplo da função read_od()"){width=750px fig-align="center"  fig-alt="exemplo da função read_od()"}
+
+:::
+:::
+
+## Dificuldades | desafios técnicos | submissão no CRAN
+**[styler](https://cran.r-project.org/web/packages/styler/index.html) _versus_ [lintr](https://cran.r-project.org/web/packages/lintr/index.html)**
+
+- seguem regras diferentes
+- conflitos implicavam não passar pelo RMDcheck no CI
+- **solução:** executar styler antes do linter
+
+
+::: columns
+::: {.column width="50%"}
+
+![](images/exemplos.png "Title: exemplo da função read_od()"){width=700px fig-align="center"  fig-alt="exemplo da função read_od()"}
+
+:::
+
+::: {.column width="50%"}
+
+![](images/exemplos.png "Title: exemplo da função read_od()"){width=700px fig-align="center"  fig-alt="exemplo da função read_od()"}
+
+:::
+:::
+    
+## Dificuldades | desafios técnicos | submissão no CRAN
+
+**Problemas com idioma latino**
+
+::: columns
+::: {.column width="50%"}
+
+- palavras acentuadas ou outras fora do dicionário "inglês" (por exemplo, São e Paulo) geraram "notes" na submissão para o CRAN
+- tentativa de adoção de uma lista de palavras para "enriquecer o dicionário"
+- **solução:** retirar palavras não reconhecidas
+
+:::
+
+::: {.column width="50%"}
+
+![](images/build_wordlist.png "Title: função build_wordlist()"){width=600px fig-align="center"  fig-alt="função build_wordlist()"}
+
+:::
+:::
+
+## Comunidade
+
+Sem a oportunidade e as pessoas, não seria possível!
+
+![](images/ropensci-champions_people.png "Title: Champions edição 2022/2023"){width=600px fig-align="center"  fig-alt="Champions edição 2022/2023"}
+
+## Comunidade | Agradecimentos especiais
+
+- Liderança de [Yanina Bellini Saibene](https://github.com/yabellini) no [programa Champions da rOpenSci](https://ropensci.org/champions/) com muita paciência,incentivo, prestatividade e acolhimento
+- Mentoria de [Beatriz Milz](https://github.com/beatrizmilz) pelo [programa Champions da rOpenSci](https://ropensci.org/champions/) (e pela vida!) com muitos encontros _hands-on_
+- Orientação de [Rafael Pereira](https://github.com/rafapereirabr) do IPEA com 2 conversas e muitos emails, mensagens e issues
+- Apoio de [Diego Rabatone](https://github.com/diraol) que, mesmo um pythoniano, fez várias contribuições de código e ficou com nosso filho no colo muitas vezes
+- Logotipo do pacote de [Marcos Kyioto](https://www.instagram.com/redes.urbanas/) entusiasta de transportes públicos e cidades justas que ajudou a dar cor ao código quando precisávamos
+- [Comunidade RLadies São Paulo](https://www.meetup.com/rladies-sao-paulo/)
+
+## Referências
+
+[1] [The CSCCE Community Participation Model - Exploring the Champion mode.
+(2021). Woodley and Pratt doi 10.5281/zenodo.5275270](https://zenodo.org/records/5275270)
+
+[2] [Evolução dos Padrões de Mobilidade na Região Metropolitana de São Paulo - necessidade de uma perspectiva de gênero](https://www.teses.usp.br/teses/disponiveis/3/3138/tde-30092016-142308/pt-br.php)
+
+[3] Repositórios do GitHub:
+[bases de dados](https://github.com/hsvab/mestrado-usp-ODs), 
+[algoritmos](https://github.com/hsvab/mestrado-usp-algoritmos), 
+[pacote odbr](https://github.com/hsvab/odbr)
 
