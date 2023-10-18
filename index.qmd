@@ -2,14 +2,14 @@
 title: "Programa de Campeãs e Campeões na América Latina <br> **rOpenSci**"
 author: "Yanina Noemí Bellini Saibene, Elio Campitelli, Marcos Prunello, Mauro Lepore, Haydee Svab, Beatriz Milz, Carolina Pradier, Cesar Luis Aybar Camacho, Paola Corrales"
 date: "rOpenSci Champions Program | 2023-10-18"
-format: 
+format:
   revealjs:
     logo: "images/LatinR_LOGOS-21.png"
     width: 1600
     height: 900
     self-contained: false
     incremental: false
-    footer: "Slides by [Haydée Svab](https://www.linkedin.com/in/hsvab/) (@hsvab), made with [Quarto](https://quarto.org/docs/presentations/revealjs/index.html). Code available [on GitHub](https://github.com/hsvab/2023-ropensci-champions-program)."
+    footer: "Slides by [Haydée Svab](https://www.linkedin.com/in/hsvab/) (@hsvab), made with [Quarto](https://quarto.org/docs/presentations/revealjs/index.html). Code available [on GitHub](https://github.com/hsvab/latinr2023-championsprogram)."
     theme: ["custom.scss"]
     slide-number: c/t
     show-slide-number: all
@@ -18,21 +18,6 @@ format:
 ---
 
 # rOpenSci
-
-## rOpenSci
-
-::: columns
-::: {.column width="40%"}
-
-Promoção de cultura que valorize a pesquisa **aberta** e **reprodutível** usando dados **compartilhados** e software **open-source**.
-
-:::
-
-::: {.column width="60%"}
-![](images/ropensci-diagrama1.png){width=80%}
-:::
-:::
-
 
 ## rOpenSci
 
@@ -91,7 +76,7 @@ E que desejem:
 - Aprender a liderar um workshop, evento ou outra atividade da rOpenSci sobre o
 tópico de desenvolvimento de pacotes ou revisão por pares de software em sua
 comunidade local
-- Conectar-se a uma rede de apoio de colegas e mentores dentro do ecossistema R
+- Conectar-se a uma rede dentro do ecossistema R
 - Fornecer feedback para ajudar a rOpenSci a continuar organizando atividades
 relevantes e acolhedoras para desenvolvedores de R
 
@@ -129,65 +114,16 @@ desenvolvimento de projeto e mentoria, além de encontros trimestrais
 
 ![](images/ropensci-atividades.png){fig-align="center"}
 
-
-## 1a edição - 2022/2023
-
-Candidaturas: 74 campeãs/ões, 28 mentoras/es, 31 países
-
-![](images/countriesApplications_es.png){fig-align="center"}
-
-## 2a edição - 2023/2024
+## 1a/2a edições - 2022/2023 e 2023/2024
 
 Candidaturas: 171 campeãs/ões, 56 mentoras/es, 55 países
 
 ![](images/countriesApplications_en.png){fig-align="center"}
 
-## Destaque
-
 <br>
 
+
 **América Latina: 3 mentoras/es | 5 campeãs/ões | 3 instrutoras/es/**
-
-::: columns
-::: {.column width="50%"}
-
-```{r}
-library(ggplot2)
-library(readr)
-champions <- read_csv("champions.csv")
-
-plot <- ggplot(champions) +
-  aes(x = edição, y = `2022/2023`, label = `Percent_2022`) +
-  geom_col(fill = "#4682B4") +
-  coord_flip() +
-  theme_minimal() +
-  ylim(0, 110) +
-  geom_text(hjust = -0.5)
-
-plot
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-library(ggplot2)
-library(readr)
-champions <- read_csv("champions.csv")
-
-plot <- ggplot(champions) +
-  aes(x = edição, y = `2023/2024`, label = `Percent_2023`) +
-  geom_col(fill = "#4682B4") +
-  coord_flip() +
-  theme_minimal() +
-  ylim(0, 110) +
-  geom_text(hjust = -0.5)
-
-plot
-```
-:::
-:::
-
-
 
 ## Mentoras/es latinoamericanas/os
 
@@ -238,110 +174,78 @@ Mauro Lepore
 
 # Pacotes desenvolvidos / revisados
 
-## eph
+## Pacotes desenvolvidos / revisados
+
 
 ::: columns
-::: {.column width="50%"}
-![](images/eph.png "Title: eph package logo"){width=250px fig-align="center"  fig-alt="eph package logo"}
+::: {.column width="20%"}
 
-por Carolina Pradier
+**eph**
 
-![](images/carolina-pradier-mentee.jpg "Title: Carolina Pradier photo"){height=300px fig-align="center"  fig-alt="Carolina Pradier photo"}
+![](images/eph.png "Title: eph package logo"){width=150px fig-align="center"  fig-alt="eph package logo"}
+
+Por Carolina Pradier
+
+![](images/carolina-pradier-mentee.jpg "Title: Carolina Pradier photo"){height=150px fig-align="center"  fig-alt="Carolina Pradier photo"}
+
+[GitHub](https://github.com/ropensci/eph) e 
+[Cran](https://cran.r-project.org/web/packages/eph/index.html)
 :::
 
-::: {.column width="50%"}
-O pacote eph consiste em um conjunto de ferramentas para baixar e manipular dados da Pesquisa Domiciliar Permanente da Argentina.
+::: {.column width="20%"}
 
-Carolina adicionou funcionalidade ao pacote, reduziu o número de dependências, melhorou as mensagens de erro e aumentou a cobertura de testes antes de enviar o pacote para revisão.
+**karel**
 
-Disponível no [GitHub](https://github.com/ropensci/eph) e no [Cran](https://cran.r-project.org/web/packages/eph/index.html).
-:::
-:::
+![](images/karel.png "Title: karel package logo"){width=150px fig-align="center"  fig-alt="karel package logo"}
 
-## karel
+Por Marcos M. Prunello
 
-::: columns
-::: {.column width="50%"}
-![](images/karel.png "Title: karel package logo"){width=250px fig-align="center"  fig-alt="karel package logo"}
+![](images/marcos-prunello-mentee.jpg "Title: Marcos Miguel Prunello photo"){height=150px fig-align="center"  fig-alt="Marcos Miguel Prunello photo"}
 
-por Marcos Miguel Prunello
-
-![](images/marcos-prunello-mentee.jpg "Title: Marcos Miguel Prunello photo"){height=300px fig-align="center"  fig-alt="Marcos Miguel Prunello photo"}
+[GitHub](https://mpru.github.io/karel/) e
+[Cran](https://cran.r-project.org/web/packages/karel/index.html)
 :::
 
-::: {.column width="50%"}
-Marcos Prunello trabalhou em seu pacote karel, uma ferramenta útil para ensinar conceitos introdutórios de programação de forma interativa e divertida, escrevendo programas para Karel realizar tarefas. O pacote também fornece funções, argumentos e mensagens do rOpenSci Champions Program in Latin America em inglês e espanhol, de forma a ser possível adicionar mais idiomas.
+::: {.column width="20%"}
 
-Disponível no [GitHub](https://mpru.github.io/karel/) e no [Cran](https://cran.r-project.org/web/packages/karel/index.html)
-:::
-:::
+**agromet**
 
+![](images/agromet.png "Title: agromet package logo"){width=150px fig-align="center"  fig-alt="agromet package logo"}
 
-## agromet
+Por Paola Corrales
 
-::: columns
-::: {.column width="50%"}
+![](images/paola-corrales.png "Title: Paola Corrales photo"){height=150px fig-align="center"  fig-alt="Paola Corrales photo"}
 
-![](images/agromet.png "Title: agromet package logo"){width=250px fig-align="center"  fig-alt="agromet package logo"}
-
-
-por Paola Corrales
-
-![](images/paola-corrales.png "Title: Paola Corrales photo"){height=300px fig-align="center"  fig-alt="Paola Corrales photo"}
+[GitHub](https://github.com/AgRoMeteorologiaINTA/agromet)
 :::
 
-::: {.column width="50%"}
-Paola Corrales desenvolveu o pacote agromet que calcula índices climáticos,
-hidrológicos e estatísticas a partir de dados classificados, incluindo uma 
-uma função para gerar gráficos de resultados georreferenciados e informações de mapeamento. Paola substituiu dependências, melhorou as mensagens de erro e 
-aumentou a cobertura dos testes.
+::: {.column width="20%"}
 
-Disponível no [GitHub](https://github.com/AgRoMeteorologiaINTA/agromet)
-:::
-:::
+**rgeeExtra**
 
+![](images/rgeeextra.png "Title: rgeeextra package logo"){width=150px fig-align="center"  fig-alt="rgeeextra package logo"}
 
-## rgeeExtra
+Por Cesar L. A. Camacho
 
-::: columns
-::: {.column width="50%"}
+![](images/cesar-luis-aybar-camacho-mentee.jpeg "Title: Cesar Luis Aybar Camacho photo"){height=150px fig-align="center"  fig-alt="Cesar Luis Aybar Camacho photo"}
 
-![](images/rgeeextra.png "Title: rgeeextra package logo"){width=250px fig-align="center"  fig-alt="rgeeextra package logo"}
-
-
-por Cesar Luis Aybar Camacho
-
-![](images/cesar-luis-aybar-camacho-mentee.jpeg "Title: Cesar Luis Aybar Camacho photo"){height=300px fig-align="center"  fig-alt="Cesar Luis Aybar Camacho photo"}
+[GitHub](https://github.com/AgRoMeteorologiaINTA/agromet)
 :::
 
-::: {.column width="50%"}
-Cesar Aybar desenvolveu o pacote rgeeExtra que amplia a funcionalidade do {rgee} para poder acessar e processar informações espaciais de sensores remotos com uma sintaxe amigável para os usuários do R. Cesar trabalhou para adicionar funcionalidades e substituir dependências espaciais que serão removidas.
+::: {.column width="20%"}
 
-Disponível no [GitHub](https://github.com/r-earthengine/rgeeExtra)
+**odbr**
+
+![](images/odbr.png "Title: odbr package logo"){width=170px fig-align="center" fig-alt="odbr package logo"}
+
+Por Haydee Svab
+
+![](images/foto-linkedin.jpeg "Title: Haydee Svab photo"){height=150px fig-align="center" fig-alt="Haydee Svab photo"}
+
+[GitHub](https://github.com/hsvab/odbr)
 :::
 :::
 
-## odbr
-
-::: columns
-::: {.column width="50%"}
-
-![](images/odbr.png "Title: odbr package logo"){width=270px fig-align="center"  fig-alt="odbr package logo"}
-
-por Haydee Svab
-
-![](images/foto-linkedin.jpeg "Title: Haydee Svab photo"){height=300px fig-align="center"  fig-alt="Haydee Svab photo"}
-:::
-
-::: {.column width="50%"}
-Haydee Svab desenvolveu um novo pacote chamado **odbr** que permite acessar e 
-processar dados das pesquisas origem e destino (od) brasileiras, o que viabiliza
-posterior uso de outros pacotes em R e implementação de vários algoritmos que
-desenvolveu para sua dissertação de mestrado.
-
-Disponível no [GitHub](https://github.com/hsvab/odbr) e em análise no CRAN
-:::
-:::
 
 # pacote odbr
 
@@ -516,7 +420,7 @@ Sem a oportunidade e as pessoas, não seria possível!
 
 ![](images/ropensci-champions_people.png "Title: Champions edição 2022/2023"){width=600px fig-align="center"  fig-alt="Champions edição 2022/2023"}
 
-## Comunidade | Agradecimentos especiais
+## Comunidade | Agradecimentos
 
 - Liderança de [Yanina Bellini Saibene](https://github.com/yabellini) no [programa Champions da rOpenSci](https://ropensci.org/champions/) com muita paciência,incentivo, prestatividade e acolhimento
 - Mentoria de [Beatriz Milz](https://github.com/beatrizmilz) pelo [programa Champions da rOpenSci](https://ropensci.org/champions/) (e pela vida!) com muitos encontros _hands-on_
